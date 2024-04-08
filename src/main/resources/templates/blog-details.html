@@ -1,0 +1,548 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Thogwa Medicals: Blog Details</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:replace="_fragments :: head"></div>
+</head>
+<body>
+<div th:replace="_fragments :: preloader"></div>
+
+    <div id="sticky-header" class="menu-area">
+        <div class="container">
+            <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+            <div class="menu-wrap">
+                <nav class="menu-nav">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 d-none d-lg-block">
+                            <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                <ul class="navigation">
+                                    <li><a href="/">Home</a></li>
+                                    <li class="active menu-item-has-children"><a href="#">Pages</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/about">About Us</a></li>
+                                            <li><a href="/blog">Our Blog</a></li>
+                                            <li class="active"><a href="/blog-details">Blog Details</a></li>
+                                            <li><a href="/contact">Contact Us</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="menu-item-has-children"><a href="/shop">Shop</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/shop">Our Shop</a></li>
+                                            <li><a href="/shop-details">Shop Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/latest-News">ASK DOCTOR</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#exampleModal">Sign In</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-3">
+                            <div class="logo">
+                                <a href="/"><img src="img/Thogwa medicals project/Thogwa Medicals logo .jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-9">
+                            <div class="header-action">
+                                <ul>
+                                    <li class="header-search">
+                                        <form action="#">
+                                            <button><i class="fas fa-search"></i></button>
+                                            <input type="text" placeholder="Search fre Medicines">
+                                        </form>
+                                    </li>
+                                    <li class="header-user d-none d-md-block">
+                                        <a href="/contact"><i class="far fa-user"></i></a>
+                                    </li>
+                                    <li class="header-shop-cart d-none d-md-flex">
+                                        <a href="#">
+                                            <img src="img/icon/shape-img.png" alt="">
+                                            <span class="cart-count">0</span>
+                                        </a>
+                                        <span class="cart-price">R0.00</span>
+                                        <ul class="minicart">
+                                            <li class="d-flex align-items-start">
+                                                <div class="cart-img">
+                                                    <a href="#"><img src="img/products/Classic-Cardiology-Black.jpg"
+                                                                     alt=""></a>
+                                                </div>
+                                                <div class="cart-content">
+                                                    <h4><a href="#">Classic-Cardiology-Black</a></h4>
+                                                    <div class="cart-price">
+                                                        <span class="new">R229.9</span>
+                                                        <span><del>R229.9</del></span>
+                                                    </div>
+                                                </div>
+                                                <div class="del-icon">
+                                                    <a href="#"><i class="far fa-trash-alt"></i></a>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex align-items-start">
+                                                <div class="cart-img">
+                                                    <a href="#"><img src="img/products/DC-Compressor-Nebulizer.jpg"
+                                                                     alt=""></a>
+                                                </div>
+                                                <div class="cart-content">
+                                                    <h4><a href="#">DC-Compressor-Nebulizer</a></h4>
+                                                    <div class="cart-price">
+                                                        <span class="new">R229.9</span>
+                                                        <span><del>R229.9</del></span>
+                                                    </div>
+                                                </div>
+                                                <div class="del-icon">
+                                                    <a href="#"><i class="far fa-trash-alt"></i></a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="total-price">
+                                                    <span class="f-left">Total:</span>
+                                                    <span class="f-right">R239.9</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="checkout-link">
+                                                    <a href="#">Shopping Cart</a>
+                                                    <a class="black-color" href="#">Checkout</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Mobile Menu  -->
+            <div class="mobile-menu">
+                <nav class="menu-box">
+                    <div class="close-btn"><i class="fas fa-times"></i></div>
+                    <div class="nav-logo"><a href="/"><img src="img/logo/Thogwa Medicals logo .jpg" alt="" title=""></a>
+                    </div>
+                    <div class="menu-outer">
+                        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                    </div>
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                            <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                            <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="menu-backdrop"></div>
+            <!-- End Mobile Menu -->
+        </div>
+    </div>
+    <div class="header-category d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-category-wrap">
+                        <div class="header-cat-list">
+                            <ul>
+                                <li><a href="/shop">MEDICAL EQUIPMENT</a>
+                                    <div class="dropdown">
+                                        <div class="row main-dropdown">
+                                            <div class="col-md-4 box drop1">
+                                                <ul>
+                                                    <li><a href="#">Aesthetics & Lasers</a></li>
+                                                    <li><a href="#">Decontamination & Sterilization Equipment</a></li>
+                                                    <li><a href="#">Dental Equipment & Instruments</a></li>
+                                                    <li><a href="#">Endoscope</a></li>
+                                                    <li><a href="#">Infant Care</a></li>
+                                                    <li><a href="#">Emergency Bags / Doctor Cases</a></li>
+                                                    <li><a href="#">Lighting/Luminaries</a></li>
+
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4 box drop2">
+                                                <ul>
+                                                    <li><a href="#">Machine Systems</a></li>
+                                                    <li><a href="#">Medical Furniture</a></li>
+                                                    <li><a href="#">Medical Instruments</a></li>
+                                                    <li><a href="#">Patient Monitoring Devices</a></li>
+                                                    <li><a href="#">Sunction & Infusion Pumps</a></li>
+                                                    <li><a href="#">Respiratory & Life Support</a></li>
+                                                    <li><a href="#">Suture & Sealing Devices</a></li>
+
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4 box drop3">
+                                                <ul>
+                                                    <li><a href="#">Parent Tranfer/Mobility</a></li>
+                                                    <li><a href="#">Compretion Devices</a></li>
+                                                    <li><a href="#">Physiotherapy & Rehabilitation</a></li>
+                                                    <li><a href="#">Training Equipment</a></li>
+                                                    <li><a href="#">Implants & Prosthetics</a></li>
+                                                    <li><a href="#">ENT Devices & Equipment</a></li>
+                                                    <li><a href="#">Orthopedic Devices & Equipment</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                </li>
+                                <li><a href="/shop">DENTAL EQUIPMENT</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/shop">PHARMACEUTICALS</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">Drugs</a></li>
+                                        <li><a href="#">Pharmaceutical Equipment</a></li>
+                                        <li><a href="#">Vitamin & Supplements</a></li>
+                                        <li><a href="#">Alternative & Herbal Products</a></li>
+                                    </ul>
+                                </li>
+                                </li>
+                                <li><a href="/shop">INFECTION CONTROL</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/shop">LABORATORY</a>
+                                    <div class="dropdown" style="left: 30%">
+                                        <div class=" row main-dropdown">
+                                            <div class="col-md-4 box drop1">
+                                                <ul>
+                                                    <li><a href="#">Analysers</a></li>
+                                                    <li><a href="#">Autoclaves</a></li>
+                                                    <li><a href="#">Balance</a></li>
+                                                    <li><a href="#">Baths and Circulators</a></li>
+                                                    <li><a href="#">Biosafety Cabinets</a></li>
+                                                    <li><a href="#">Centrifuges</a></li>
+                                                    <li><a href="#">Chromatography</a></li>
+                                                    <li><a href="#">Microscopes</a></li>
+                                                    <li><a href="#">Lab Refrigerator Freezer Combination</a></li>
+                                                    <li><a href="#">Lab Shakers and 3 D Rockers
+                                                    </a></li>
+                                                    <li><a href="#">Laminar Air Flow Cabinet</a></li>
+                                                    <li><a href="#">Media Dispensing System</a></li>
+                                                    <li><a href="#">Microplate Reader</a></li>
+                                                    <li><a href="#">Microplate Washer</a></li>
+                                                    <li><a href="#">Water Testing</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="col-md-4 line"></div>
+
+                                            <div class="col-md-4 box drop2">
+                                                <ul>
+                                                    <li><a href="#">CO2 Incubator</a></li>
+                                                    <li><a href="#">Electrophoresis</a></li>
+                                                    <li><a href="#">ELISA Reader</a></li>
+                                                    <li><a href="#">Fluorometre</a></li>
+                                                    <li><a href="#">Fume Hoods</a></li>
+                                                    <li><a href="#">Gel Documentation</a></li>
+                                                    <li><a href="#">Furnace</a></li>
+                                                    <li><a href="#">Lab Freezer</a></li>
+                                                    <li><a href="#">Oven</a></li>
+                                                    <li><a href="#">Mixers and Vortexes</a></li>
+                                                    <li><a href="#">Peristaltic Pump</a></li>
+                                                    <li><a href="#">Refractometers</a></li>
+                                                    <li><a href="#">Platelet Incubator And Agitator
+                                                    </a></li>
+                                                    <li><a href="#">Refregirators</a></li>
+                                                    <li><a href="#">Water Distiller</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4 box drop3">
+                                                <ul>
+                                                    <li><a href="#">Glassware Washing Machine</a></li>
+                                                    <li><a href="#">Heating Mantle</a></li>
+                                                    <li><a href="#">Hotplate Stirrers</a></li>
+                                                    <li><a href="#">Hotplate</a></li>
+                                                    <li><a href="#">Incubator</a></li>
+                                                    <li><a href="#">HPLC</a></li>
+                                                    <li><a href="#">Kjeldahl Systems</a></li>
+                                                    <li><a href="#">Water Purification Systems</a></li>
+                                                    <li><a href="#">Rotary Evaporators</a></li>
+                                                    <li><a href="#">Test Chambers</a></li>
+                                                    <li><a href="#">Spectrophotometer</a></li>
+                                                    <li><a href="#">Thermal Cyclers</a></li>
+                                                    <li><a href="#">Thermometers</a></li>
+                                                    <li><a href="#">Ultrasonic Cleaners
+                                                    </a></li>
+                                                    <li><a href="#">Vacuum Pumps</a></li>
+                                                    <li><a href="#">Viscometers</a></li>
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="/shop">MEDICAL IMAGING</a>
+                                    <div class="dropdown" style="left: 30%">
+                                        <div class="row main-dropdown">
+                                            <div class="col-md-4 box drop1">
+                                                <ul>
+                                                    <li><a href="#">CT</a></li>
+                                                    <li><a href="#">EEG</a></li>
+                                                    <li><a href="#">EKG</a></li>
+                                                    <li><a href="#">MRI</a></li>
+
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4 box drop2">
+                                                <ul>
+                                                    <li><a href="#">X-Ray</a></li>
+                                                    <li><a href="#">Digital Imaging</a></li>
+                                                    <li><a href="#">Dark Room Equipment & Supply</a></li>
+                                                    <li><a href="#">Quality Assurance & Safety Contro</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-4 box drop2">
+                                                <ul>
+                                                    <li><a href="#">ECG / EKG</a></li>
+                                                    <li><a href="#">PET</a></li>
+                                                    <li><a href="#">Ultrasound</a></li>
+                                                    <li><a href="#">Nuclear Medicine</a></li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-category-btn">
+                            <a href="/shop">GET 5% OFF NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-area-end -->
+
+
+<!-- main-area -->
+<main>
+
+    <!-- breadcrumb-area -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb-area-end -->
+
+    <!-- blog-details-area -->
+    <section class="blog-details-area pt-100 pb-100">
+        <div class="container">
+            <div class="section-area-inner">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="standard-blog-item mb-50">
+                            <div class="blog-thumb">
+                                <img th:src="@{/images/{imageName}(imageName=${post.postImage})}" alt="">
+                            </div>
+                            <div class="standard-blog-content blog-details-content">
+                                <ul class="standard-blog-meta">
+                                    <!--                                            <li class="active"><a href="#">Ask DOCTOR'S</a></li>-->
+                                    <li th:text="${post.createAt}"><i class="far fa-calendar-alt"></i></li>
+                                    <li>By <a href="#" th:text="${post.postBy}"></a></li>
+                                </ul>
+                                <h4 class="title" th:text="${post.postTitle}"></h4>
+                                <p th:text="${post.postContent}"></p>
+
+
+                                <div class="blog-line" data-background="img/blog/blog_item_line.png"></div>
+                                <div class="blog-details-bottom">
+                                    <div class="blog-details-tags">
+                                        <ul>
+                                            <li class="title"><i class="fas fa-tags"></i> Tags :</li>
+                                            <li><a href="#">Business</a></li>
+                                            <li><a href="#">Work</a></li>
+                                            <li><a href="#">Knowledge</a></li>
+                                            <li><a href="#">Online</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="blog-details-social">
+                                        <ul>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8">
+                        <aside class="blog-sidebar">
+                            <div class="widget">
+                                <h4 class="widget-title">Search</h4>
+                                <div class="sidebar-search">
+                                    <form action="#">
+                                        <input type="text" placeholder="Search ...">
+                                        <button type="submit"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <h4 class="widget-title">Categories</h4>
+                                <div class="sidebar-cat-list">
+                                    <ul>
+                                        <li><a href="#">Hand Sanitize <i class="fas fa-angle-double-right"></i></a></li>
+                                        <li><a href="#">Lab Hand Gloves <i class="fas fa-angle-double-right"></i></a>
+                                        </li>
+                                        <li><a href="#">Surgery Mask <i class="fas fa-angle-double-right"></i></a></li>
+                                        <li><a href="#">Lab N95 Facemask <i class="fas fa-angle-double-right"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <h4 class="widget-title">Recent Posts</h4>
+                                <div class="rc-post-list">
+                                    <ul>
+                                        <li>
+                                            <div class="rc-post-thumb">
+                                                <a href="/blog-details"><img src="img/blog/rc_post_thumb01.jpg" alt=""></a>
+                                            </div>
+                                            <div class="rc-post-content">
+                                                <h6 class="title"><a href="/blog-details">How To More Emerge You’re
+                                                    Stuck</a></h6>
+                                                <span class="date"><i
+                                                        class="far fa-calendar-alt"></i> August 19, 2021</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rc-post-thumb">
+                                                <a href="/blog-details"><img src="img/blog/rc_post_thumb02.jpg" alt=""></a>
+                                            </div>
+                                            <div class="rc-post-content">
+                                                <h6 class="title"><a href="/blog-details">Learning Resurc Challe Online
+                                                    Work</a></h6>
+                                                <span class="date"><i
+                                                        class="far fa-calendar-alt"></i> August 19, 2021</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="rc-post-thumb">
+                                                <a href="/blog-details"><img src="img/blog/rc_post_thumb03.jpg" alt=""></a>
+                                            </div>
+                                            <div class="rc-post-content">
+                                                <h6 class="title"><a href="/blog-details">Medical supplies and numer
+                                                    kinds</a></h6>
+                                                <span class="date"><i
+                                                        class="far fa-calendar-alt"></i> August 19, 2021</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <h4 class="widget-title">Tag Posts</h4>
+                                <div class="sidebar-tag-list">
+                                    <ul>
+                                        <li><a href="#"># Business</a></li>
+                                        <li><a href="#"># Knowledge</a></li>
+                                        <li><a href="#"># Work</a></li>
+                                        <li><a href="#"># Online</a></li>
+                                        <li><a href="#"># Who</a></li>
+                                        <li><a href="#"># Technology</a></li>
+                                        <li><a href="#"># Consult</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog-details-area-end -->
+
+    <!-- core-features-area -->
+    <section class="core-features-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="core-features-item mb-30">
+                        <div class="core-features-icon">
+                            <img src="img/icon/delivery.png" alt="">
+                        </div>
+                        <div class="core-features-content">
+                            <h4 class="title">Home Delivery</h4>
+                            <p>Product Delivery is a customer-centric approach to defining.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="core-features-item mb-30">
+                        <div class="core-features-icon">
+                            <img src="img/icon/return.png" alt="">
+                        </div>
+                        <div class="core-features-content">
+                            <h4 class="title">Click and Pick</h4>
+                            <p>Product Delivery is a customer-centric approach to defining.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="core-features-item mb-30">
+                        <div class="core-features-icon">
+                            <img src="img/icon/headphone.png" alt="">
+                        </div>
+                        <div class="core-features-content">
+                            <h4 class="title">Quality Support</h4>
+                            <p>Product Delivery is a customer-centric approach to defining.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- core-features-area-end -->
+
+</main>
+<!-- main-area-end -->
+
+<!-- footer-area -->
+<div th:replace = "_fragments :: footer"></div>
+<!-- footer-area-end -->
+
+
+<!-- JS here -->
+<div th:replace="_fragments :: scripts"></div>
+<!--script end-->
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

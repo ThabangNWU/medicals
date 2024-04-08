@@ -1,0 +1,205 @@
+#login-section{
+    position: relative;
+    height: 102vh;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.input-group
+{
+    position:absolute;
+    top:0;
+    transition: 0.5s; 
+}
+.login-info{
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+}
+.login-info h1{
+    position: relative;
+    color: rgb(168, 167, 167);
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.login-info h1::before{
+    content: '';
+    position: absolute;
+    text-align: center;
+    bottom: -2px;
+    height: 3px;
+    width: 30px;
+    background-color: #008192;
+    border-radius: 10px;
+}
+.inputs{
+    padding: 10px 0;
+    width: 100%;
+}
+.colm{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.colm label{
+    text-align: left;
+    margin: 5px 0;
+    font-weight: 500;
+    color: gray;
+}
+.colm label::after{
+    content: '*';
+    color: red;
+    font-size: 20px;
+}
+.colm input{
+    border: 0;
+    outline: none;
+    padding: 8px 15px;
+    background-color: gainsboro;
+}
+.forgot{
+    width: 100%;
+    text-align: right;
+    padding: 0 10px;
+}
+.forgot a{
+    text-decoration: none;
+    color: rgb(39, 39, 39);
+    transition: .5s;
+    font-size: 12px;
+    font-weight: 500;
+}
+.forgot a:hover{
+    color: #005f96;
+}
+.inputs .btn-log{
+    width: 100%;
+    margin-top: 30px;
+}
+.login-info .inputs .btn-log button{
+    border: 0;
+    outline: none;
+    background: linear-gradient(to right, rgb(29, 29, 29), #005f96);
+    padding: 8px;
+    width: 95%;
+    font-weight: 500;
+    color: rgb(192, 189, 189);
+    transition: .6s;
+}
+.login-info .inputs .btn-log button:hover{
+    color: white;
+    background: linear-gradient(to right,#005f96, rgb(29, 29, 29))
+}
+.sign-up{
+    padding: 30px 0;
+    width: 100%;
+}
+.sign-up p{
+    color: gray;
+    font-weight: 500;
+}
+.sign-up a{
+    text-decoration: none;
+    color: rgb(0, 153, 255);
+    font-weight: 500;
+    transition: .5s;
+
+}
+.sign-up a:hover{
+    color: #005f96;
+}
+.link-icons{
+    padding-top: 70px;
+}
+.link-icons i{
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #2ac8d3;
+    color: #2ac8d3;
+    font-size: 35px;
+    transition: .5s;
+}
+.link-icons i:hover{
+    cursor: pointer;
+    transform: translateY(-7px);
+}
+#register
+{
+    left: 530px;
+}
+#reset-pass{
+    left: -530px;
+}
+
+@media screen and (max-width: 770px) {
+    #login-section{
+        position: relative;
+        width: 100%;
+        height: 102vh;
+        background: white;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .login-info{
+        width: 100%;
+        padding: 20px;
+    }
+    .login-info h1{
+        font-size: 12px;
+    }
+    .inputs{
+        width: 100%;
+        padding: 4px 0;
+    }
+    .colm{
+        margin: 5px;
+    }
+    .colm label{
+        margin: 2px 0;
+        font-weight: 400;
+    }
+    .colm label::after{
+        font-size: 10px;
+    }
+    .colm input{
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+    ::placeholder{
+        font-size: 12px;
+    }
+    .forgot{
+        padding: 0;
+    }
+    .forgot a{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .inputs .btn-log{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .login-info .inputs .btn-log button{
+        border: 0;
+        outline: none;
+        background: linear-gradient(to right, rgb(29, 29, 29), #005f96);
+        padding: 5px;
+        width: 95%;
+        font-weight: 500;
+        color: rgb(192, 189, 189);
+        transition: .6s;
+    }
+    .sign-up{
+        padding: 15px 0;
+        width: 100%;
+    }
+    .link-icons{
+        padding-top: 40px;
+    }
+    .link-icons i{
+        margin: 3px;
+        font-size: 15px;
+    }
+}

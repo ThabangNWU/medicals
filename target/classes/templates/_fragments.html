@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<footer th:fragment="footer">
+    <div class="footer-top-wrap">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xl-4 col-lg-4 col-md-8 col-sm-8">
+            <div class="footer-widget">
+              <div class="fw-img">
+                <img src="img/Thogwa medicals project/Thogwa Medicals logo .jpg" alt="">
+              </div>
+              <div class="fw-link">
+                <p>We are a proudly South African company that is strategically positioned to cater to the
+                  country, by supplying quality medical and pharmaceutical equipment while empowering
+                  black communities through job creation and skill development.</p>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+              <div class="footer-widget">
+                  <h4 class="fw-title">Quick Links:</h4>
+                  <div class="fw-link">
+                      <ul>
+                          <li><a href="index.html">Home</a></li>
+                          <li><a href="about-us.html">About Us</a></li>
+                          <li><a href="contact.html">Contact Us</a></li>
+                          <li><a href="shop.html">Shop</a></li>
+                          <li><a href="#">Private Policy</a></li>
+
+                      </ul>
+                  </div>
+              </div>
+          </div> -->
+          <div class="col-xl-4 col-lg-4 col-md-8 col-sm-8 cont">
+            <div class="footer-widget">
+              <h4 class="fw-title">Contact Us</h4>
+              <div class="fw-link">
+                <div class="content">
+                  <p><strong>Office: </strong>+27 (12) 023 0791
+                  </p>
+                  <p><strong>Mobile: </strong>+27 (61) 418 7600</p>
+                </div>
+                <div class="content">
+                  <p><strong>Email: </strong>admin@thogwamedicals.com
+                  </p>
+                  <p><strong>Alternative Email: </strong>rendani@thogwamedicals.com</p>
+                </div>
+                <div class="content">
+                  <p><strong>Address:</strong> Tiger Valley Office Park, Suite 1, Building 88D, Silver
+                    lakes Road, Pretoria, 0081
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+            <div class="footer-widget">
+              <h4 class="fw-title">Subscribe Our Newsletter</h4>
+              <div class="f-newsletter">
+                <p>Get a free subscription to our latest news</p>
+                <form action="#" class="newsletter-form">
+                  <input type="text" placeholder="Enter Your Email Address">
+                  <button><i class="fas fa-rocket"></i></button>
+                </form>
+              </div>
+              <div class="fw-download-btn">
+                <a href="#"><img src="img/icon/download_btn01.png" alt=""></a>
+                <a href="#"><img src="img/icon/download_btn02.png" alt=""></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer-counter-wrap">
+        <div class="row">
+          <div class="col-12">
+            <div class="fcw-title text-center mb-45">
+              <h4 class="title">world LARGEST medicals and pharmacueticals PLATFORM</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="counter-item mb-30">
+              <h2 class="count"><span class="odometer" data-count="160"></span>M+</h2>
+              <p>Visitors</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="counter-item mb-30">
+              <h2 class="count"><span class="odometer" data-count="27"></span>M+</h2>
+              <p>Orders Delivered</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="counter-item mb-30">
+              <h2 class="count"><span class="odometer" data-count="190"></span>K+</h2>
+              <p>Cities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <div class="copyright-text">
+              <p>Copyright © 20231 MACT TECH. All Rights Reserved</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="payment-method-img text-center text-md-right">
+              <img src="img/images/card.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div >
+  </footer>
+<div th:fragment="preloader">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img th:src="@{/img/logo/preloader.gif}" alt="">
+  </div>
+  <!-- Preloader-end -->
+
+  <!-- Scroll-top -->
+  <button class="scroll-top scroll-to-target" data-target="html">
+    <i class="fas fa-angle-up"></i>
+  </button>
+  <!-- Scroll-top-end-->
+
+  <!-- header-area -->
+  <div class="header-top">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="header-top-area">
+            <div class="header-top-left-text">
+              <p>We provides <span>best</span> medical accessories</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="header-top-right-text">
+            <ul>
+              <li><a th:href="@{/about-us}">About Us</a></li>
+              <li><a th:href="@{/contact}">Contact</a></li>
+              <!--                                <li><a th:href="@{/contact}">FAQ</a></li>-->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div th:fragment="head">
+  <link rel="shortcut icon" type="image/jpg" th:href="@{/img/images/medical-logo.jpg}"/>
+
+
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- CSS here -->
+  <link rel="stylesheet" th:href="@{'/css/bootstrap.min.css'}">
+  <link rel="stylesheet" th:href="@{'/css/animate.min.css'}">
+  <link rel="stylesheet" th:href="@{'/css/magnific-popup.css'}">
+  <link rel="stylesheet" th:href="@{'/css/fontawesome-all.min.css'}">
+  <link rel="stylesheet" th:href="@{'/css/owl.carousel.min.css'}">
+  <link rel="stylesheet" th:href="@{'/css/nice-select.css'}">
+  <link rel="stylesheet" th:href="@{'/css/jquery-ui.css'}">
+  <link rel="stylesheet" th:href="@{'/css/odometer.css'}">
+  <link rel="stylesheet" th:href="@{'/css/aos.css'}">
+  <link rel="stylesheet" th:href="@{'/css/slick.css'}">
+  <link rel="stylesheet" th:href="@{'/css/default.css'}">
+  <link rel="stylesheet" th:href="@{'/css/style.css'}">
+  <link rel="stylesheet" th:href="@{'/css/responsive.css'}">
+
+
+</div>
+<div th:fragment="scripts">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://kit.fontawesome.com/5dd83d6fa5.js" crossorigin="anonymous"></script>
+
+  <!-- JS here -->
+  <!-- Thymeleaf version of script tags -->
+  <script th:src="@{/js/vendor/jquery-3.5.0.min.js}"></script>
+  <script th:src="@{/js/bootstrap.min.js}"></script>
+  <script th:src="@{/js/isotope.pkgd.min.js}"></script>
+  <script th:src="@{/js/imagesloaded.pkgd.min.js}"></script>
+  <script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+  <script th:src="@{/js/owl.carousel.min.js}"></script>
+  <script th:src="@{/js/jquery.odometer.min.js}"></script>
+  <script th:src="@{/js/jquery.nice-select.min.js}"></script>
+  <script th:src="@{/js/jquery.countdown.min.js}"></script>
+  <script th:src="@{/js/jquery.easypiechart.min.js}"></script>
+  <script th:src="@{/js/jquery.inview.min.js}"></script>
+  <script th:src="@{/js/jquery.appear.js}"></script>
+  <script th:src="@{/js/slick.min.js}"></script>
+  <script th:src="@{/js/jquery-ui.min.js}"></script>
+  <script th:src="@{/js/ajax-form.js}"></script>
+  <script th:src="@{/js/wow.min.js}"></script>
+  <script th:src="@{/js/aos.js}"></script>
+  <script th:src="@{/js/plugins.js}"></script>
+  <script th:src="@{/js/main.js}"></script>
+  <script th:src="@{/js/log-res.js}"></script>
+
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!doctype html>
+<html class="no-js" lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Thogwa Medicals: Shop</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div th:replace="_fragments :: head"></div>
+</head>
+<body>
+
+<div th:replace="_fragments :: preloader"></div>
+
+<div id="sticky-header" class="menu-area">
+    <div class="container">
+        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+        <div class="menu-wrap">
+            <nav class="menu-nav">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 d-none d-lg-block">
+                        <div class="navbar-wrap main-menu d-none d-lg-flex">
+                            <ul class="navigation">
+                                <li><a th:href="@{/}">Home</a></li>
+                                <li class="menu-item-has-children"><a href="#">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a th:href="@{/about-us}">About Us</a></li>
+
+                                        <li><a th:href="@{/contact}">Contact Us</a></li>
+                                        <li><a th:href="@{/blog}">Blog</a></li>
+                                    </ul>
+                                </li>
+                                <!--                                            <li><a th:href="@{/thogwa-product}">PRODUCTS</a></li>-->
+                                <!-- <li class="active menu-item-has-children"><a href="shop.html">Shop</a> -->
+                                <ul class="sub-menu">
+
+                                </ul>
+                                </li>
+                                <li><a th:href="@{/login}">Sign In</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3">
+                        <div class="logo">
+                            <a th:href="@{/}">
+                                <img th:src="@{'/img/Thogwa medicals project/Thogwa Medicals logo .jpg'}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-9">
+                        <div class="header-action">
+                            <ul>
+                                <li class="header-search">
+                                    <form th:action="@{/product/search}" method="get">
+                                        <button type="submit"><i class="fas fa-search"></i></button>
+                                        <input type="text" name="name" placeholder="Search for products"
+                                               th:value="${name}">
+                                    </form>
+                                </li>
+                                <!--                                            <li class="header-user d-none d-md-block">-->
+                                <!--                                                <a href="/contact"><i class="far fa-user"></i></a>-->
+                                <!--                                            </li>-->
+                                <li class="header-user d-none d-md-block">
+
+                                    <a class=" d-none d-md-block" href="#" data-bs-toggle="dropdown">
+                                        <i class="far fa-user"></i>
+                                    </a><!-- End Profile Iamge Icon -->
+
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                                        <!--                                                    <li class="dropdown-header">-->
+                                        <!--                                                        <h6>Kevin Anderson</h6>-->
+                                        <!--                                                        <span>Web Designer</span>-->
+                                        <!--                                                    </li>-->
+                                        <!--                                                    <li>-->
+                                        <!--                                                        <hr class="dropdown-divider">-->
+                                        <!--                                                    </li>-->
+
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center"
+                                               th:href="@{/thogwa-order}">
+                                                <i class="bi bi-person"></i>
+                                                <span>Your Orders</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center"
+                                               href="users-profile.html">
+                                                <i class="bi bi-gear"></i>
+                                                <span>Account Settings</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                                <i class="bi bi-question-circle"></i>
+                                                <span>Need Help?</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item d-flex align-items-center" th:href="@{/logout}">
+                                                <i class="bi bi-box-arrow-right"></i>
+                                                <span>Sign Out</span>
+                                            </a>
+                                        </li>
+
+                                    </ul><!-- End Profile Dropdown Items -->
+                                </li><!-- End Profile Nav -->
+                                <li class="header-shop-cart d-none d-md-flex">
+                                    <a href="#">
+                                        <img src="img/icon/shape-img.png" alt="">
+                                        <span class="cart-count">0</span>
+                                    </a>
+                                    <span class="cart-price">R0.00</span>
+                                    <ul id="minicart" class="minicart" style="overflow-y: auto; max-height: 627.725px;">
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+            <nav class="menu-box">
+                <div class="close-btn"><i class="fas fa-times"></i></div>
+                <div class="nav-logo"><a th:href="@{/}"><img th:src="@{'/img/logo/Thogwa Medicals logo .jpg'}" alt=""
+                                                             title=""></a>
+                </div>
+                <div class="menu-outer">
+                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                </div>
+                <div class="social-links">
+                    <ul class="clearfix">
+                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="menu-backdrop"></div>
+        <!-- End Mobile Menu -->
+    </div>
+</div>
+<div class="header-category d-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="header-category-wrap">
+                    <div class="header-cat-list">
+                        <ul>
+                            <li th:each="header : ${headers}">
+                                <a href="#" th:text="${header.name}"></a>
+                                <div class="dropdown">
+                                    <div class="row main-dropdown">
+                                        <div class="col-md-4 box drop1">
+                                            <ul th:if="${header.id == selectedHeaderId}"
+                                                th:each="category : ${categories}">
+                                                <li>
+                                                    <a href="#" th:text="${category.name}"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <div class="header-category-btn">
+                        <a href="/shop">GET 5% OFF NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+<!-- header-area-end -->
+
+
+<!-- main-area -->
+<main>
+
+    <!-- breadcrumb-area -->
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="breadcrumb-wrap">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb-area-end -->
+
+    <!-- shop-area -->
+    <div class="shop-area shop-inner-page pt-100 pb-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-3 order-2 order-lg-0">
+                    <aside class="shop-sidebar">
+                        <div class="widget">
+                            <div class="sidebar-search">
+                                <form th:action="@{/product/search}" method="get">
+                                    <input type="text" name="name" placeholder="Search ..." th:value="${name}">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            <h4 class="sidebar-title">Category</h4>
+                            <div class="shop-cat-list">
+                                <ul th:each="category : ${categories}">
+                                    <li>
+                                        <a th:href="@{/product/find-products/{categoryId}(categoryId = ${category.id})}"
+                                           th:text="${category.categoryName}">
+                                            <span>+</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--            <div class="widget">-->
+                        <!--              <h4 class="sidebar-title">Top Brand</h4>-->
+                        <!--              <div class="shop-brand-list">-->
+                        <!--                <ul>-->
+                        <!--                  <li><a href="/shop">Medication</a></li>-->
+                        <!--                  <li><a href="/shop">Carnation</a></li>-->
+                        <!--                  <li><a href="/shop">Suppke</a></li>-->
+                        <!--                  <li><a href="/shop">WeBeyond</a></li>-->
+                        <!--                  <li><a href="/shop">Edstudy</a></li>-->
+                        <!--                </ul>-->
+                        <!--              </div>-->
+                        <!--            </div>-->
+                        <div class="widget">
+                            <h4 class="sidebar-title">Filter by Price</h4>
+                            <div class="price_filter">
+                                <div id="slider-range"></div>
+                                <div class="price_slider_amount">
+                                    <span>Price :</span>
+                                    <input type="text" id="amount" name="price" placeholder="0"/>
+                                    <button type="button" class="btn" onclick="applyFilter()" id="filter-button">
+                                        Filter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget shop-widget-banner">
+                            <a href="/shop"><img src="img/products/shop_add.jpg" alt=""></a>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-9">
+                    <div class="shop-wrap">
+                        <h4 class="title">Shop</h4>
+                        <div class="shop-page-meta mb-30">
+                            <div class="shop-grid-menu">
+                                <ul>
+                                    <li class="active"><a href="#"><i class="fas fa-th"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-list"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="shop-showing-result">
+                                <p>Total Items 1-12 of 13</p>
+                            </div>
+                            <div class="shop-show-list">
+                                <form action="#">
+                                    <label for="show">Show</label>
+                                    <select id="show" class="selected">
+                                        <option value="">08</option>
+                                        <option value="">12</option>
+                                        <option value="">16</option>
+                                        <option value="">18</option>
+                                        <option value="">20</option>
+                                    </select>
+                                </form>
+                            </div>
+                            <div class="shop-short-by">
+                                <form id="filterForm" method="get" th:action="@{/sort/product-filter}"
+                                      th:object="${product}">
+                                    <label for="shortBy">Sort By</label>
+                                    <select id="shortBy" class="selected" name="sort" onchange="submitForm()">
+                                        <option value="latest">Sort by latest</option>
+                                        <option value="lower-price">Low to high</option>
+                                        <option value="higher-price">High to low</option>
+                                        <option value="popularity">Popularity</option>
+                                    </select>
+                                </form>
+
+
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+
+                            <div class="col" th:each="product : ${products}">
+                                <div class="shop-item mb-45">
+                                    <div class="shop-thumb">
+                                        <a th:href="@{/product/shop-details/{productId}(productId=${product.productId})}"
+                                           th:onclick="'addToCart(' + ${product.productId} + ')'"><img
+                                                th:src="@{/images/{imageName}(imageName=${product.imageURL})}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                    <div class="shop-content">
+                                        <!--                                                <span class="cat" th:text="${product.category.categoryName}"></span>-->
+                                        <h5 class="title"><a th:href="@{/product/shop-details/{productId}(productId=${product.productId})}" th:text="${product.name}"></a></h5>
+                                        <div class="shop-item-rating">
+                                            <span class="avg-rating">4.5<i class="far fa-star"></i></span>
+                                            <span class="total-rating">349 Ratings</span>
+                                        </div>
+                                        <th:block th:if="${product.offPercentage > 0}">
+                                            <p class="shop-discount">MRP
+                                                <del th:text="'R' + ${product.price}"></del>
+                                                <span class="discount-off"
+                                                      th:text="${product.offPercentage} + '% OFF'"></span></p>
+                                        </th:block>
+                                        <div class="shop-bottom">
+                                            <ul>
+                                                <!-- Check if offPercentage is greater than 0 -->
+                                                <th:block th:if="${product.offPercentage > 0}">
+                                                    <li class="price" th:text="'R' + ${product.specialPrice}"></li>
+                                                </th:block>
+
+                                                <!-- Optionally, render something else when offPercentage is not greater than 0 -->
+                                                <th:block th:unless="${product.offPercentage > 0}">
+                                                    <li class="price" th:text="'R' + ${product.price}"></li>
+                                                </th:block>
+
+
+                                                <a>
+                                                    <!-- Content of the link, e.g., image, text, etc. -->
+                                                    <li class="add">
+                                                        <a th:href="@{/product/shop-details/{productId}(productId=${product.productId})}"
+                                                           th:onclick="'addToCart(' + ${product.productId} + ')'">
+                                                            ADD +
+                                                        </a>
+                                                    </li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="shop-page-meta">
+                                <div class="shop-grid-menu">
+                                    <ul>
+                                        <li class="active"><a href="#"><i class="fas fa-th"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-list"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="shop-showing-result">
+                                    <p>Total Items 1- [[${totalItems}]] of [[${totalItems}]]</p>
+                                </div>
+                                <div class="shop-show-list">
+                                    <form action="#">
+                                        <label for="bottomShow">Show</label>
+                                        <select id="bottomShow" class="selected">
+                                            <option th:each="pageSize : ${pageSizes}" th:text="${pageSize}"
+                                                    th:value="${pageSize}"
+                                                    th:selected="${pageSize} == ${selectedPageSize}"></option>
+                                        </select>
+                                    </form>
+                                </div>
+                                <div class="shop-pagination">
+                                    <ul th:if="${totalPages != 1}">
+                                        <li th:class="${products.number == 0} ? 'disabled'">
+                                            <a class="pageLink"
+                                               th:href="@{/sort/product-filter(sort=${sort}, pageSize=${selectedPageSize}, page=1)}">&laquo;</a>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                        </li>
+                                        <li th:class="${products.number == 0} ? 'disabled'">
+                                            <a class="pageLink"
+                                               th:href="@{/sort/product-filter(sort=${sort}, pageSize=${selectedPageSize}, page=${products.number})}">&larr;</a>
+                                        </li>
+                                        <li th:class="${products.number + 1 == page} ? 'active pointer-disabled'"
+                                            th:each="page : ${#numbers.sequence(pager.startPage, pager.endPage)}">
+                                            <a class="pageLink"
+                                               th:href="@{/sort/product-filter(sort=${sort}, pageSize=${selectedPageSize}, page=${page})}"
+                                               th:text="${page}"></a>
+                                        </li>
+                                        <li th:class="${products.number + 1 == products.totalPages} ? 'disabled'">
+                                            <a class="pageLink"
+                                               th:href="@{/sort/product-filter(sort=${sort}, pageSize=${selectedPageSize}, page=${products.number + 2})}">&rarr;</a>
+                                        </li>
+                                        <li th:class="${products.number + 1 == products.totalPages} ? 'disabled'">
+                                            <a class="pageLink"
+                                               th:href="@{/sort/product-filter(sort=${sort}, pageSize=${selectedPageSize}, page=${products.totalPages})}">&raquo;</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- shop-area-end -->
+
+    <!-- core-features-area -->
+    <section class="core-features-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="core-features-item mb-30">
+                        <div class="core-features-icon">
+                            <img th:src="@{'/img/icon/delivery.png'}" alt="">
+                        </div>
+                        <div class="core-features-content">
+                            <h4 class="title">Home Delivery</h4>
+                            <p>Product Delivery is a customer-centric approach to defining.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="core-features-item mb-30">
+                        <div class="core-features-icon">
+                            <img th:src="@{'/img/icon/return.png'}" alt="">
+                        </div>
+                        <div class="core-features-content">
+                            <h4 class="title">Click and Pick</h4>
+                            <p>Product Delivery is a customer-centric approach to defining.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="core-features-item mb-30">
+                        <div class="core-features-icon">
+                            <img th:src="@{'/img/icon/headphone.png'}" alt="">
+                        </div>
+                        <div class="core-features-content">
+                            <h4 class="title">Quality Support</h4>
+                            <p>Product Delivery is a customer-centric approach to defining.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- core-features-area-end -->
+    <div id="searchResultsContainer">
+        <!-- The search results will be dynamically added here -->
+    </div>
+
+</main>
+<!-- main-area-end -->
+
+<!-- footer-area -->
+<div th:replace = "_fragments :: footer"></div>
+<!-- footer-area-end -->
+
+<!-- JS here -->
+<div th:replace="_fragments :: scripts"></div>
+<script th:inline="javascript">
+            var cartData = localStorage.getItem('order');
+            if (cartData) {
+                cartData = JSON.parse(cartData);
+                console.log(cartData);
+            }
+
+            function displayCart() {
+                var minicart = document.getElementById('minicart');
+                var cartCount = document.querySelector('.cart-count');
+                var cartPrice = document.querySelector('.cart-price');
+                console.log();
+                minicart.innerHTML = '';
+                var totalQuantity = 0;
+                var totalPrice = 0;
+
+                cartData.forEach(function(item) {
+                    var listItem = document.createElement('li');
+                    listItem.classList.add('d-flex', 'align-items-start');
+
+
+                    var totalItemPrice = parseFloat(item.product) * parseInt(item.quantity);
+
+                    listItem.innerHTML = `
+                        <div class="cart-img">
+                            <a href="#"><img src="/img/products/${item.productImageName}" alt=""></a>
+                        </div>
+                        <div class="cart-content">
+                            <h4><a href="#">${item.productName}</a></h4>
+                            <div class="cart-price">
+                                <span class="new">R${item.product} x ${item.quantity}</span>
+                                <span>Total: R${totalItemPrice.toFixed(2)}</span>
+                            </div>
+                        </div>
+                        <div class="del-icon">
+                            <a href="#" onclick="deleteItem('${item.productID}')"><i class="far fa-trash-alt"></i></a>
+                        </div>
+                    `;
+
+                    minicart.appendChild(listItem);
+
+                    totalQuantity += parseInt(item.quantity);
+                    totalPrice += totalItemPrice;
+                });
+
+
+                var totalItem = document.createElement('li');
+                totalItem.innerHTML = `
+                    <div class="total-price">
+                        <span class="f-left">Total:</span>
+                        <span class="f-right">R${totalPrice.toFixed(2)}</span>
+                    </div>
+                `;
+
+                var checkoutItem = document.createElement('li');
+                checkoutItem.innerHTML = `
+                    <div class="checkout-link">
+                        <a href="#">Shopping Cart</a>
+                        <a class="black-color" th:href=@"{/checkout}" id="checkoutLink">Checkout</a>
+                    </div>
+                `;
+
+                minicart.appendChild(totalItem);
+                minicart.appendChild(checkoutItem);
+
+
+                cartCount.textContent = totalQuantity;
+                cartPrice.textContent = `R${totalPrice.toFixed(2)}`;
+            }
+
+            displayCart();
+
+            function deleteItem(productID) {
+
+                let index = cartData.findIndex(item => item.productID === productID);
+
+
+                if (index !== -1) {
+                    cartData.splice(index, 1);
+
+
+                    localStorage.setItem('order', JSON.stringify(cartData));
+
+
+                    displayCart();
+                }
+            }
+
+
+</script>
+<script>  // Add click event listener to the "Checkout" link
+        document.getElementById('checkoutLink').addEventListener('click', function(event) {
+        // Prevent the default behavior of the link (e.g., navigating to a new page)
+        event.preventDefault();
+
+        // Redirect to the checkout page
+        window.location.href = '/checkout';
+        });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="js/log-res.js"></script>
+
+<!--<script>-->
+<!--  $(document).ready(function () {-->
+<!--    const searchForm = $('.sidebar-search form');-->
+<!--    const searchInput = $('.sidebar-search input');-->
+<!--    const searchResultsContainer = $('#searchResultsContainer');-->
+
+<!--    searchForm.submit(function (event) {-->
+<!--        event.preventDefault();-->
+
+<!--        const searchTerm = searchInput.val().trim();-->
+
+<!--        if (searchTerm !== '') {-->
+<!--            const endpoint = `/public/products/keyword/${encodeURIComponent(searchTerm)}`;-->
+
+<!--            $.ajax({-->
+<!--                type: 'GET',-->
+<!--                url: endpoint,-->
+<!--                success: function (data) {-->
+<!--                   -->
+<!--                    searchResultsContainer.empty();-->
+
+<!--                  -->
+<!--                    if (data.content.length > 0) {-->
+<!--                        -->
+<!--                        data.content.forEach(function (product) {-->
+<!--                            const resultItem = `<div class="search-result">-->
+<!--                                <img src="${product.imageURL}" alt="${product.name}">-->
+<!--                                <h3>${product.name}</h3>-->
+<!--                                <p>${product.description}</p>-->
+<!--                                <p>Price: $${product.price}</p>-->
+<!--                            </div>`;-->
+
+<!--                    -->
+<!--                            searchResultsContainer.append(resultItem);-->
+<!--                        });-->
+<!--                    } else {-->
+<!--             -->
+<!--                        searchResultsContainer.html('<p>No results found.</p>');-->
+<!--                    }-->
+<!--                },-->
+<!--                error: function (xhr, status, error) {-->
+<!--                    console.error(error);-->
+<!--                }-->
+<!--            });-->
+<!--        }-->
+<!--    });-->
+<!--});-->
+
+<!--</script>-->
+<script>
+    function submitForm() {
+        document.getElementById("filterForm").submit();
+    }
+
+</script>
+<!--        <script>-->
+<!--    function sign_up() {-->
+<!--        // Get user input values-->
+<!--        var firstName = document.getElementById("myName").value;-->
+<!--        var lastName = document.getElementById("surname").value;-->
+<!--        var username = document.getElementById("email").value;-->
+<!--        var password = document.getElementById("psw").value;-->
+
+<!--        // Create a JSON object with the user input-->
+<!--        var customerData = {-->
+<!--            "firstName": firstName,-->
+<!--            "lastName": lastName,-->
+<!--            "username": username,-->
+<!--            "password": password-->
+<!--            // Add other fields as needed-->
+<!--        };-->
+
+
+<!--         fetch('/add/customer', {-->
+<!--                method: 'POST',-->
+<!--                headers: {-->
+<!--                    'Content-Type': 'application/json'-->
+<!--                },-->
+<!--                body: JSON.stringify(customerData)-->
+<!--            })-->
+<!--            .then(response => {-->
+<!--                if (!response.ok) {-->
+<!--                    throw new Error('Network response was not ok');-->
+<!--                }-->
+<!--                return response.json();-->
+<!--            })-->
+<!--            .then(data => {-->
+
+<!--                alert('Signup successful!');-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--    // Hide loading indicator-->
+<!--    // ...-->
+
+<!--    console.error('There was a problem with the fetch operation:', error);-->
+<!--    if (error instanceof TypeError) {-->
+<!--        alert('Network error. Please check your internet connection.');-->
+<!--    } else {-->
+<!--        alert('Signup failed. Please try again later.');-->
+<!--    }-->
+<!--});-->
+<!--    }-->
+</script>
+<script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>
