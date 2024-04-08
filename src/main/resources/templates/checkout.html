@@ -250,8 +250,8 @@
                     <form action="https://www.payfast.co.za/eng/process" method="post" onsubmit="handleSubmit()">
                         <input type="hidden" name="merchant_id" value="11110645">
                         <input type="hidden" name="merchant_key" value="svdfwzhhm199x">
-                        <input type="hidden" name="return_url" value="https://localhost/thogwa-order">
-                        <!--                        <input type="hidden" name="cancel_url" value="https://www.example.com/cancel">-->
+                        <input type="hidden" name="return_url" value="https://localhost/payment/successful">
+                        <input type="hidden" name="cancel_url" value="https://losthost/payment/failed">
                         <input type="hidden" name="amount" id="amountInput" value=""/>
                         <input type="hidden" name="item_name" value="Test Product"/>
                         <input class="checkout__payment" type="image" th:src="@{'img/payment/payFast.jpg'}"
