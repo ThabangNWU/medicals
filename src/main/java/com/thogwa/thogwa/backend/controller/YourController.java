@@ -22,10 +22,10 @@ public class YourController {
     public String showShop() {
         return "shop";
     }
-    @GetMapping("/blog")
-    public String showBlog() {
-        return "blog";
-    }
+    // @GetMapping("/blog")
+    // public String showBlog() {
+    //     return "blog";
+    // }
     @GetMapping("/thogwa-product")
     public String showProducts() {
         return "products";
