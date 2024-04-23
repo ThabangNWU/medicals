@@ -1,5 +1,6 @@
 package com.thogwa.thogwa.backend.controller;
 
+import com.thogwa.thogwa.backend.dto.ShippmentAddress;
 import com.thogwa.thogwa.backend.model.*;
 import com.thogwa.thogwa.backend.repository.AddressRepository;
 import com.thogwa.thogwa.backend.repository.CartRepository;
@@ -84,15 +85,24 @@ public ModelAndView allOrdersByUser(@RequestParam("pageSize") Optional<Integer> 
     Address address = new Address();
     String email = principal.getName();
     User userAddressShipment = customerService.findByUsername(email);
+    List<Address> addresses = addressRepository.findAll();
 
-    Address shipmentAdress = addressRepository.findByCustomers(userAddressShipment);
+//    Address address1 = userAddressShipment.getAddresses().stream().findFirst().get();
+    Address shipmentAdress =  null;
+    for(Address address1 : addresses) {
+        if(address1.getCustomers() == userAddressShipment) {
+            shipmentAdress = address1;
+        }
+    }
+
+     userAddressShipment.getAddresses().stream().findFirst().get();
 
 
     orders = orderService.allOrdersByUser(evalPage, evalPageSize, principal.getName());
 
     var pager = new Pager(orders.getTotalPages(), orders.getNumber(), BUTTONS_TO_SHOW);
 
-    modelAndView.addObject("orders", orders); // Changed from "order" to "orders"
+    modelAndView.addObject("orders", orders);
     modelAndView.addObject("totalItems", orders.getTotalElements());
     modelAndView.addObject("totalPages", orders.getTotalPages());
     modelAndView.addObject("selectedPageSize", evalPageSize);
@@ -158,26 +168,42 @@ public ModelAndView allOrdersByUser(@RequestParam("pageSize") Optional<Integer> 
             // Redirect to the last available page
             return new ModelAndView("redirect:/product/?pageSize=" + evalPageSize + "&page=" + (orders.getTotalPages() - 1));
         }
-
-        // Retrieve shipping address for each order
+        List<Address> addresses = addressRepository.findAll();
+        List<User> users = customerRepository.findAll();
         List<Address> shippingAddresses = new ArrayList<>();
-        for (Order order : orders.getContent()) {
-            User user = order.getUser();
-            Address shippingAddress = addressRepository.findByCustomers(user);
+        ShippmentAddress shippmentAddress = null;
+        for (Address address : addresses) {
+            System.out.println(address); // Print out each address
+            System.out.println("fuck");
 
-            shippingAddresses.add(shippingAddress);
+            if (address.getCustomerId() != null) {
+                for (User user : users) {
+                    System.out.println(user);
+                    if (address.getCustomerId() == user.getId()) {
+                        shippingAddresses.add(address);
+                        break;
+                    }
+                }
+
+            }
         }
+       Address addresstemp = shippingAddresses.stream().findFirst().get();
+        ShippmentAddress address = new ShippmentAddress();
+        address.setStreet(addresstemp.getStreet());
+        address.setCity(addresstemp.getCity());
+        address.setCountry(addresstemp.getCountry());
+        address.setPinCode(addresstemp.getPincode());
 
         var pager = new Pager(orders.getTotalPages(), orders.getNumber(), BUTTONS_TO_SHOW);
 
         modelAndView.addObject("orders", orders); // Changed from "order" to "orders"
         modelAndView.addObject("totalItems", orders.getTotalElements());
         modelAndView.addObject("totalPages", orders.getTotalPages());
-        modelAndView.addObject("address",shippingAddresses);
+        modelAndView.addObject("address",address.getStreet() + " "+address.getCity() +" "+ address.getCountry() +" "+ address.getPinCode());
         modelAndView.addObject("selectedPageSize", evalPageSize);
         modelAndView.addObject("pageSizes", PAGE_SIZES);
         modelAndView.addObject("pager", pager);
-        modelAndView.addObject("shippingAddresses", shippingAddresses);
+        modelAndView.addObject("shippingAddresses", address);
 
         return modelAndView;
     }
