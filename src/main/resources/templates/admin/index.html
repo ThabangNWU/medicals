@@ -269,17 +269,18 @@
 
   </header><!-- End Header -->
 
+
   <!-- ======= Sidebar ======= -->
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link " href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link " href="index.html">-->
+<!--          <i class="bi bi-grid"></i>-->
+<!--          <span>Dashboard</span>-->
+<!--        </a>-->
+<!--      </li>&lt;!&ndash; End Dashboard Nav &ndash;&gt;-->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -306,12 +307,12 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="/admin/addHeader">
+            <a th:href="@{/admin/addHeader}">
               <i class="bi bi-circle"></i><span>Add Header</span>
             </a>
           </li>
           <li>
-            <a href="forms-layouts.html">
+            <a th:href="@{/admin/header/view}">
               <i class="bi bi-circle"></i><span>View Headers</span>
             </a>
           </li>
@@ -329,7 +330,7 @@
             </a>
           </li>
           <li>
-            <a href="tables-data.html">
+            <a th:href="@{/admin/categories/view}">
               <i class="bi bi-circle"></i><span>View Categories</span>
             </a>
           </li>
@@ -342,22 +343,35 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
+            <a th:href="@{/admin/orders}">
+              <i class="bi bi-circle"></i><span>View Product</span>
             </a>
           </li>
+          <!--        <li>-->
+          <!--          <a href="charts-apexcharts.html">-->
+          <!--            <i class="bi bi-circle"></i><span>ApexCharts</span>-->
+          <!--          </a>-->
+          <!--        </li>-->
+          <!--        <li>-->
+          <!--          <a href="charts-echarts.html">-->
+          <!--            <i class="bi bi-circle"></i><span>ECharts</span>-->
+          <!--          </a>-->
+          <!--        </li>-->
+        </ul>
+      </li><!-- End Charts Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gift"></i><span>Blog</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
+            <a th:href="@{/admin/addPost}">
+              <i class="bi bi-circle"></i><span>Create Post</span>
             </a>
           </li>
         </ul>
-      </li><!-- End Charts Nav -->
+      </li><!-- End Icons Nav -->
 
 
       <li class="nav-heading">Pages</li>
@@ -379,6 +393,7 @@
     </ul>
 
   </aside><!-- End Sidebar-->
+
 
   <main id="main" class="main">
 
