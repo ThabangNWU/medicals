@@ -250,8 +250,8 @@
                     <form action="https://www.payfast.co.za/eng/process" method="post" onsubmit="handleSubmit()">
                         <input type="hidden" name="merchant_id" value="11110645">
                         <input type="hidden" name="merchant_key" value="svdfwzhhm199x">
-                        <input type="hidden" name="return_url" value="https://medicals-production.up.railway.app/payment/successful">
-                        <input type="hidden" name="cancel_url" value="https://medicals-production.up.railway.app/payment/failed">
+                        <input type="hidden" name="return_url" value="https://www.thogwamedica.co.za/payment/successful">
+                                                <input type="hidden" name="cancel_url" value="https://www.thogwamedica.co.za/payment/failed">
                         <input type="hidden" name="amount" id="amountInput" value=""/>
                         <input type="hidden" name="item_name" value="Test Product"/>
                         <input class="checkout__payment" type="image" th:src="@{'img/payment/payFast.jpg'}"
@@ -400,38 +400,6 @@
 
     });
 </script>
-
-
-
-    <script th:inline="javascript">
-    let cartItems = localStorage.getItem('order');
-    if (cartItems) {
-        let parsedCartItems = JSON.parse(cartItems);
-        console.log('Parsed Cart Items:', parsedCartItems);
-
-        fetch('/add-to-cart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(parsedCartItems)
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Cart items saved successfully:', data);
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-    }
-
-    </script>
-
     <script th:inline="javascript">
             var cartData = localStorage.getItem('order');
             if (cartData) {
@@ -530,6 +498,6 @@
 
 
     <script src="https://kit.fontawesome.com/5dd83d6fa5.js" crossorigin="anonymous"></script>
-    <script th:src="@{/js/main.js}"></script>
+<!--    <script th:src="@{/js/main.js}"></script>-->
 </body>
 </html>
