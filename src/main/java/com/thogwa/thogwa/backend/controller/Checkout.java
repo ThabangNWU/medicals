@@ -22,18 +22,10 @@ public class Checkout {
     public String checkout (Principal principal, Model model) {
         String userName = principal.getName();
         User user = customerRepository.findByUsername(userName);
-        List<Address> addresses = addressRepository.findAll();
-        Address address = addressRepository.findById(1L).get();
-//        for(Address tempAddress : addresses) {
-//            if(address.getCustomers().equals(user)) {
-//                address = tempAddress;
-//            }
-//        }
-
+      
         model.addAttribute("email", user.getUsername());
         model.addAttribute("customer",user.getFirstName() + " " + user.getLastName());
         model.addAttribute("cellPhone",user.getMobileNumber());
-        model.addAttribute("street",address.getStreet());
         return "checkout";
     }
 
