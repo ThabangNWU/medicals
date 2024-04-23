@@ -218,10 +218,10 @@
         <div class="container">
             <div class="section-area-inner">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8" th:each="post :${posts}">
-                        <div class="standard-blog-item mb-50">
+                    <div class="col-lg-8" th:if="${posts != null}">
+                        <div class="standard-blog-item mb-50"  th:each="post :${posts}">
                             <div class="blog-thumb">
-                                <a th:href="@{/blog/blog-details/{postId}(postId=${post.id})}"><img
+                                <a th:href="@{/blog-details/{postId}(postId=${post.id})}"><img
                                         th:src="@{/images/{imageName}(imageName=${post.postImage})}" alt=""></a>
                             </div>
                             <div class="standard-blog-content">
@@ -230,15 +230,45 @@
                                     <li th:text="${post.createAt}"><i class="far fa-calendar-alt"></i></li>
                                     <li>By <a href="#" th:text="${post.postBy}"></a></li>
                                 </ul>
-                                <h4 class="title"><a th:href="@{/blog/blog-details/{postId}(postId=${post.id})}"
+                                <h4 class="title"><a th:href="@{/blog-details/{postId}(postId=${post.id})}"
                                                      th:text="${post.postTitle}"></a></h4>
-                                <p th:text="${post.postContent}"></p>
+                                <div class="ql-editor" th:utext="${post.postContent}"></div>
                                 <div class="blog-line" data-background="img/blog/blog_item_line.png"></div>
-                                <a th:href="@{/blog/blog-details/{postId}(postId=${post.id})}" class="read-more">Read
+                                <a th:href="@{/blog-details/{postId}(postId=${post.id})}" class="read-more">Read
                                     more</a>
                             </div>
                         </div>
+                        <div class="shop-pagination">
+                            <ul th:if="${totalPages  != 1}">
+                                <li th:class="${products.number == 0} ? disabled">
+                                    <a class="pageLink"
+                                       th:href="@{/all(pageSize=${selectedPageSize}, page=1)}">&laquo;</a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </li>
+                                <li th:class="${products.number == 0} ? disabled">
+                                    <a class="pageLink"
+                                       th:href="@{/all(pageSize=${selectedPageSize}, page=${products.number})}">&larr;</a>
+                                </li>
+                                <li th:class="${products.number == (page - 1)} ? 'active pointer-disabled'"
+                                    th:each="page : ${#numbers.sequence(pager.startPage, pager.endPage)}">
+                                    <a class="pageLink"
+                                       th:href="@{/all(pageSize=${selectedPageSize}, page=${page})}"
+                                       th:text="${page}"></a>
+                                </li>
+                                <li th:class="${products.number + 1 == products.totalPages} ? disabled">
+                                    <a class="pageLink"
+                                       th:href="@{/all(pageSize=${selectedPageSize}, page=${products.number + 2})}">&rarr;</a>
+                                </li>
+                                <li th:class="${products.number + 1 == products.totalPages} ? disabled">
+                                    <a class="pageLink"
+                                       th:href="@{/all(pageSize=${selectedPageSize}, page=${products.totalPages})}">&raquo;</a>
+                                </li>
+                            </ul>
 
+                        </div>
+                        <div th:if="${posts == null || posts.isEmpty()}">
+                            <p>No posts found.</p>
+                        </div>
                     </div>
                     <div class="col-lg-4 col-md-8">
                         <aside class="blog-sidebar">
@@ -522,6 +552,6 @@
 
 
 </script>
-<script th:src="@{/js/main.js}"></script>
+<!--<script th:src="@{/js/main.js}"></script>-->
 </body>
 </html>
